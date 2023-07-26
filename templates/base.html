@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Flashcard application">
+        <title>Flashcard</title>
+        <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+        <link rel="stylesheet" href="{% static 'css/base.css' %}">        
+    </head>
+    
+    <body>
+        <head>
+            <h1>Flashcard</h1>
+        </head>
+        
+        <main>
+            {% block content %}
+                <h2>Welcome to your Flashcard app!</h2>
+            {% endblock content %}
+        </main>
+        
+        <footer>
+            <p>
+                Demonstration of Flashcard application by <a href="https://realpython.com/django-flashcards-app/">Real Python</a> tutorial.            
+            </p>
+        </footer>
+    </body>
+</html>
