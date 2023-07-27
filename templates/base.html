@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="description" content="Flashcard application">
-        <title>Flashcard</title>
+        <title>Flashcard | {% block title %}{% endblock title %}</title>
         <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
         <link rel="stylesheet" href="{% static 'css/base.css' %}">        
     </head>
@@ -12,9 +12,11 @@
     <body>
         <head>
             <h1>Flashcard</h1>
+            {% include "navigation.html" %}            
         </head>
         
         <main>
+            <hr>
             {% block content %}
                 <h2>Welcome to your Flashcard app!</h2>
             {% endblock content %}
@@ -22,7 +24,7 @@
         
         <footer>
             <p>
-                Demonstration of Flashcard application by <a href="https://realpython.com/django-flashcards-app/">Real Python</a> tutorial.            
+                Demonstration of Flashcard application by <a href="https://realpython.com/django-flashcards-app/" target="_blank">Real Python</a> tutorial.            
             </p>
         </footer>
     </body>

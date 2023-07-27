@@ -36,8 +36,7 @@ hr {
     border-color: var(--accent);
 }
 
-button,
-a[role="button"] {
+button, a[role="button"] {
     color: white;
     text-decoration: none;
 }

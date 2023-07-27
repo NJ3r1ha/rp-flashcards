@@ -1,8 +1,11 @@
 from django.urls import path
-from django.views.generic import TemplateView
+
+from .views import CardListView, CardCreateView, CardUpdateView
 
 app_name = "cards"
 
 urlpatterns = [
-    path("", TemplateView.as_view(template_name="base.html"), name="home"),
+    path("", CardListView.as_view(), name="card_list"),
+    path("new", CardCreateView.as_view(), name="card_create"),
+    path("edit/<int:pk>", CardUpdateView.as_view(), name="card_update"),
 ]
