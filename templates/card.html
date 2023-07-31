@@ -1,6 +1,16 @@
 <article>
     <h4>{{ card.question }}</h4>
-    <p>{{ card.answer }}</p>
-    <hr>
-    <a href="{% url 'cards:card_update' card.id %}" role="button">✏️ Edit card</a>
+    {% if not check_card %}
+        <p>{{ card.answer }}</p>
+        <hr>
+        <a href="{% url 'cards:card_update' card.id %}" role="button">✏️ Edit card</a>
+    {% else %}
+        <details>
+            <summary>Reveal Answer</summary>
+            <p>{{ card.answer }}</p>
+        </details>
+        <hr>
+        {% include "card_check_form.html" with solved=True %}
+        {% include "card_check_form.html" with solved=False %}
+    {% endif %}
 </article>
